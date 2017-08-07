@@ -4,11 +4,11 @@
             <div class="avatar">
                 <img width="34" height="34">
             </div>
-            <div class="username">{{card.data[0].username}}</div>
-            <div class="userdate">{{card.data[0].userdate}}</div>
+            <div class="username">{{username}}</div>
+            <div class="userdate">{{userdate}}</div>
         </f7-card-header>
         <f7-card-content class="text">
-           {{card.data[0].text}}
+           {{text}}
         </f7-card-content>
         <f7-card-footer>
             <f7-link >
@@ -29,21 +29,22 @@
             </f7-link>                                  
         </f7-card-footer>
         <f7-card-content>
-           <div><span class="commentname">{{card.data[0].comment[0].commentname}}</span>{{card.data[0].comment[0].commenttext}}</div> 
+           <div><span class="commentname">{{commentname}}</span>{{commenttext}}</div> 
         </f7-card-content>
     </f7-card>
 </template>
 <script>
     import header_data from '../json/header_data.json'
     export default{
-        data() {
-            return {
-                card:header_data
-            }
+        data(){
+            return {}
         },
         methods:{
 
-        }
+        },
+        mounted(){
+        console.log(aa)
+    }
     }
 </script>
 <style scoped>
