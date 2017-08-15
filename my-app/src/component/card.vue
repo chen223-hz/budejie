@@ -42,7 +42,7 @@
         },
         methods:{
             dianzan(){
-                document.getElementById('zan').value = "已赞";
+                document.getElementById('zan').innerHTML = "已赞";
             }
 
         },
