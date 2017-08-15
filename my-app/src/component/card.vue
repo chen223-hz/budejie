@@ -42,7 +42,12 @@
         },
         methods:{
             dianzan(){
-                document.getElementById('zan').innerHTML = "已赞";
+                var zan = document.getElementById('zan');
+                if(zan.innerHTML == "赞"){
+                    zan.innerHTML = "已赞";
+                }else{
+                    zan.innerHTML = "赞";
+                }
             }
 
         },
