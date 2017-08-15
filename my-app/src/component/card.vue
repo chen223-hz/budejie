@@ -4,16 +4,16 @@
             <div class="avatar">
                 <img width="34" height="34">
             </div>
-            <div class="username">{{username}}</div>
-            <div class="userdate">{{userdate}}</div>
+            <div class="username">{{data.username}}</div>
+            <div class="userdate">{{data.userdate}}</div>
         </f7-card-header>
         <f7-card-content class="text">
-           {{text}}
+           {{data.text}}
         </f7-card-content>
         <f7-card-footer>
-            <f7-link >
+            <f7-link @click="dianzan">
                 <span class="iconfont icon-iconlikenum" ></span>
-                <span>赞</span>
+                <span id="zan">赞</span>
             </f7-link> 
             <f7-link>
                 <span class="iconfont icon-buxihuan"></span>
@@ -29,21 +29,24 @@
             </f7-link>                                  
         </f7-card-footer>
         <f7-card-content>
-           <div><span class="commentname">{{commentname}}</span>{{commenttext}}</div> 
+           <div><span class="commentname">{{data.comment[0].commentname}}</span>{{data.comment[0].commenttext}}</div> 
         </f7-card-content>
     </f7-card>
 </template>
 <script>
     import header_data from '../json/header_data.json'
     export default{
+        props: ['data'],
         data(){
             return {}
         },
         methods:{
+            dianzan(){
+                document.getElementById('zan').value = "已赞";
+            }
 
         },
         mounted(){
-        console.log(aa)
     }
     }
 </script>
