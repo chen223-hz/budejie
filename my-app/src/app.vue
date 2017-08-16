@@ -69,9 +69,11 @@
             </f7-toolbar>
             <f7-tabs>
               <f7-tab id="tab1" active>
-                <essence></essence>
+                  <essence></essence>
               </f7-tab>
-              <f7-tab id="tab2">22</f7-tab>
+              <f7-tab id="tab2">
+            
+              </f7-tab>
               <f7-tab id="tab3">33</f7-tab>
               <f7-tab id="tab4">44</f7-tab>
             </f7-tabs>
@@ -126,10 +128,12 @@
 </template>
 
 <script>
-import  essence from './page/essence.vue'
+import  essence from './pages/essence.vue'
+import  card from './pages/card.vue'
 export default {
   components:{
-    'essence' : essence
+    'essence' : essence,
+    'card':card
   }
 }
 </script>
