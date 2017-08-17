@@ -72,7 +72,7 @@
                   <essence></essence>
               </f7-tab>
               <f7-tab id="tab2">
-            
+                  <tab></tab>
               </f7-tab>
               <f7-tab id="tab3">33</f7-tab>
               <f7-tab id="tab4">44</f7-tab>
@@ -129,11 +129,11 @@
 
 <script>
 import  essence from './pages/essence.vue'
-import  card from './pages/card.vue'
+import  tab from './component/tab.vue'
 export default {
   components:{
     'essence' : essence,
-    'card':card
+    'tab' : tab
   }
 }
 </script>
