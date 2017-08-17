@@ -9,6 +9,8 @@ import Framework7Vue from 'framework7-vue'
 
 // Vuex
 import Vuex from 'vuex'
+//vue-router
+import VueRouter from 'vue-router'
 
 // Import F7 iOS Theme Styles
 import Framework7Theme from 'framework7/dist/css/framework7.ios.min.css'
@@ -32,7 +34,7 @@ import axios from 'axios';
 Vue.prototype.$http = axios
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
-
+Vue.use(VueRouter)
 // Init App
 new Vue({
   el: '#app',
@@ -43,6 +45,7 @@ new Vue({
     /* Uncomment to enable Material theme: */
     // material: true,
     routes: Routes,
+    
   },
   // Register App Component
   components: {

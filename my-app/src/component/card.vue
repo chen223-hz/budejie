@@ -1,5 +1,6 @@
 <template>
     <f7-card>
+        <f7-link @click="contentclick">
         <f7-card-header>
             <div class="avatar">
                 <img width="34" height="34" :src="data.avatar">
@@ -10,7 +11,7 @@
         <f7-card-content class="text">
            {{data.text}}
         </f7-card-content>
-        <f7-card-footer>
+        <f7-card-footer v-if="enableToolbar" >
             <f7-link @click="dianzan">
                 <span class="iconfont icon-iconlikenum" ></span>
                 <span id="zan">赞</span>
@@ -28,17 +29,19 @@
                 <span >分享</span>
             </f7-link>                                  
         </f7-card-footer>
-        <f7-card-content>
-           <div><span class="commentname"></span></div> 
-        </f7-card-content>
     </f7-card>
 </template>
 <script>
     import header_data from '../json/header_data.json'
     export default{
-        props: ['data'],
+        props:{
         data(){
             return {}
+        },
+        enableToolbar: {
+                    type: Boolean,
+                    default: true
+                },
         },
         methods:{
             dianzan(){
@@ -48,8 +51,10 @@
                 }else{
                     zan.innerHTML = "赞";
                 }
-            }
-
+            },
+            contentclick(){
+                this.$f7.mainView.router.load({url:'/post/'});
+             }
         },
         mounted(){
     }
