@@ -28,6 +28,8 @@ import Icon from './icon/iconfont.css'
 // Import App Component
 import App from './app'
 
+import axios from 'axios';
+Vue.prototype.$http = axios
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
 

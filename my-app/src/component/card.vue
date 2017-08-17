@@ -2,7 +2,7 @@
     <f7-card>
         <f7-card-header>
             <div class="avatar">
-                <img width="34" height="34">
+                <img width="34" height="34" :src="data.avatar">
             </div>
             <div class="username">{{data.username}}</div>
             <div class="userdate">{{data.userdate}}</div>
@@ -29,7 +29,7 @@
             </f7-link>                                  
         </f7-card-footer>
         <f7-card-content>
-           <div><span class="commentname">{{data.comment[0].commentname}}</span>{{data.comment[0].commenttext}}</div> 
+           <div><span class="commentname"></span></div> 
         </f7-card-content>
     </f7-card>
 </template>
