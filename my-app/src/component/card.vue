@@ -29,6 +29,7 @@
                 <span >分享</span>
             </f7-link>                                  
         </f7-card-footer>
+        </f7-link>
     </f7-card>
 </template>
 <script>
