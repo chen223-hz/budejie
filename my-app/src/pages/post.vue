@@ -3,11 +3,48 @@
         <f7-navbar  title="正文" back-link="返回" sliding>
         </f7-navbar>
         <Card :data="post" :enableToolbar="false"></Card>
+        <div class="comments">
+            <div class="title">评论</div>
+            <div class="list">
+                <template v-if="1">
+                    <div>
+                    </div>
+                </template>
+                <div v-else>
+                    <i class=""></i>
+                    <div class="text">
+                        <span>暂时还没有评论内容</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <f7-card-footer>
+            <f7-link @click="dianzan">
+                <span class="iconfont icon-iconlikenum" ></span>
+                <span id="zan">赞</span>
+            </f7-link> 
+            <f7-link>
+                <span class="iconfont icon-buxihuan"></span>
+                <span>踩</span>
+            </f7-link> 
+            <f7-link>
+                <span class="iconfont icon-pinglun"></span>
+                <span>评论</span>
+            </f7-link> 
+            <f7-link>
+                <span class="iconfont icon-fenxiang"></span>
+                <span >分享</span>
+            </f7-link>                                  
+        </f7-card-footer>
     </f7-page>
 </template>
 <script>
+    import axios from 'axios'
     import Card from '../component/card.vue'
     import header_data from '../json/header_data.json'
+    import find from 'lodash/find'
+
     export default{
         props: ['data'],
         components:{

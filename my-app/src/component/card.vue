@@ -1,6 +1,6 @@
 <template>
     <f7-card>
-        <f7-link @click="contentclick">
+        <f7-link @click="contentclick(data)">
         <f7-card-header>
             <div class="avatar">
                 <img width="34" height="34" :src="data.avatar">
@@ -53,8 +53,8 @@
                     zan.innerHTML = "赞";
                 }
             },
-            contentclick(){
-                this.$f7.mainView.router.load({url:'/post/'});
+            contentclick(data){
+                this.$emit('card:content-click',data);
              }
         },
         mounted(){

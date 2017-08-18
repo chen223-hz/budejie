@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Card v-for="aa in shuju" :data="aa" @click="contentclick"></Card>
+        <Card v-for="aa in shuju" :data="aa" @card:content-click="routeToPost"></Card>
     </div>
 </template>
 <script>
@@ -13,14 +13,12 @@ export default{
     data(){
     	return{
     	shuju:'',
-    }
+        }
     },
     methods:{
-         contentclick(){
-                console.log(this.$f7.router);
-                this.$f7.mainView.router.load({url:'/post/'});
-                alert("12");
-             }
+        routeToPost(data){
+            this.$f7.mainView.router.load({url:'/post/'});
+        }
     },
     mounted(){
         var shuju
