@@ -1,6 +1,6 @@
 <template>
     <f7-card>
-        <f7-link @click="contentclick">
+        <f7-link @click="contentclick(data)">
         <f7-card-header>
             <div class="avatar">
                 <img width="34" height="34" :src="data.avatar">
@@ -36,13 +36,18 @@
     import header_data from '../json/header_data.json'
     export default{
         props:{
-        data(){
-            return {}
+            data:{
+                type:Object,
+                default:""
+            },
+            enableToolbar:{
+                typr:Boolean,
+                default:true
+            },
         },
-        enableToolbar: {
-                    type: Boolean,
-                    default: true
-                },
+        data(){
+            return {
+            }
         },
         methods:{
             dianzan(){
@@ -53,8 +58,8 @@
                     zan.innerHTML = "赞";
                 }
             },
-            contentclick(){
-                this.$f7.mainView.router.load({url:'/post/'});
+            contentclick(data){
+                this.$emit('card:content-click', data);
              }
         },
         mounted(){
