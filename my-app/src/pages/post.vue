@@ -46,15 +46,20 @@
     import find from 'lodash/find'
 
     export default{
-        props: ['data'],
         components:{
             Card
         },
         data(){
             return{
-                post:{}
+                post:{
+                    type:Object
+                }
             }
-        }
+        },
+        mounted() {
+        var query = this.$route.query
+        this.post = query
+      },
 
     }
 </script>

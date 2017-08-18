@@ -36,13 +36,18 @@
     import header_data from '../json/header_data.json'
     export default{
         props:{
-        data(){
-            return {}
+            data:{
+                type:Object,
+                default:""
+            },
+            enableToolbar:{
+                typr:Boolean,
+                default:true
+            },
         },
-        enableToolbar: {
-                    type: Boolean,
-                    default: true
-                },
+        data(){
+            return {
+            }
         },
         methods:{
             dianzan(){
@@ -54,7 +59,8 @@
                 }
             },
             contentclick(data){
-                this.$emit('card:content-click',data);
+                this.$emit('card:content-click', data);
+
              }
         },
         mounted(){
