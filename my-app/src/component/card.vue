@@ -1,6 +1,5 @@
 <template>
     <f7-card>
-        <f7-link @click="contentclick(data)">
         <f7-card-header>
             <div class="avatar">
                 <img width="34" height="34" :src="data.avatar">
@@ -8,9 +7,11 @@
             <div class="username">{{data.username}}</div>
             <div class="userdate">{{data.userdate}}</div>
         </f7-card-header>
+        <f7-link @click="contentclick(data)">
         <f7-card-content class="text">
            {{data.text}}
         </f7-card-content>
+        </f7-link>
         <f7-card-footer v-if="enableToolbar" >
             <f7-link @click="dianzan">
                 <span class="iconfont icon-iconlikenum" ></span>
@@ -29,7 +30,6 @@
                 <span >分享</span>
             </f7-link>                                  
         </f7-card-footer>
-        </f7-link>
     </f7-card>
 </template>
 <script>

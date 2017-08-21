@@ -18,6 +18,7 @@ export default{
     methods: {
         routeToPost(data) {
             this.$f7.mainView.router.load({url: `/post/?avatar=${data.avatar}&username=${data.username}&userdate=${data.userdate}&text=${data.text}`})
+            console.log(data)
         }
     },
     mounted(){

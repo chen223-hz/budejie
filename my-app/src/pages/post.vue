@@ -14,9 +14,7 @@
         },
         data(){
             return{
-                post:{
-                    type:Object
-                }
+                post:{}
             }
         },
         mounted() {
