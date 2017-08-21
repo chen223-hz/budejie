@@ -7,7 +7,7 @@
             <div class="username">{{data.username}}</div>
             <div class="userdate">{{data.userdate}}</div>
         </f7-card-header>
-        <f7-link @click="contentclick(data)">
+          <f7-link @click="contentclick(data)">
         <f7-card-content class="text">
            {{data.text}}
         </f7-card-content>
@@ -60,6 +60,7 @@
             },
             contentclick(data){
                 this.$emit('card:content-click', data);
+
              }
         },
         mounted(){
