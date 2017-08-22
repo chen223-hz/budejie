@@ -32,6 +32,7 @@ import App from './app'
 
 import axios from 'axios';
 Vue.prototype.$http = axios
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
 Vue.use(VueRouter)
