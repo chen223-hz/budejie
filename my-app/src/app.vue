@@ -58,14 +58,6 @@
     <!-- Main Views -->
     <f7-views>
       <f7-view id="main-view" main>
-         <f7-navbar theme="white">
-          <f7-nav-left>
-          </f7-nav-left>
-          <f7-nav-center sliding>{{navbarTitle}}</f7-nav-center>
-          <f7-nav-right>
-            <f7-link open-popup="#publisherPopup" icon="iconfont icon-feedback3" icon-size="22" v-show="activedTab === 'home'"></f7-link>
-          </f7-nav-right>
-        </f7-navbar>
         <f7-pages>
           <f7-page>
             <f7-toolbar tabbar labels>
@@ -93,22 +85,8 @@
         </f7-pages>
       </f7-view>
     </f7-views>
-
-    <!-- Popup -->
-    <f7-popup id="popup">
-      <f7-view navbar-fixed>
-        <f7-pages>
-          <f7-page>
-            <f7-navbar title="Popup">
-              <f7-nav-right>
-                <f7-link close-popup>Close</f7-link>
-              </f7-nav-right>
-            </f7-navbar>
-            <f7-block>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, architecto. Cupiditate laudantium rem nesciunt numquam, ipsam. Voluptates omnis, a inventore atque ratione aliquam. Omnis iusto nemo quos ullam obcaecati, quod.</f7-block>
-          </f7-page>
-        </f7-pages>
-      </f7-view>
-    </f7-popup>
+    <!-- popup -->
+    <popup></popup>
 
     <!-- Login Screen -->
     <f7-login-screen id="login-screen">
@@ -141,35 +119,18 @@
 
 <script>
 import  essence from './pages/essence.vue'
-import  tab from './component/tab.vue'
 import  news from './pages/new.vue'
 import  club from './pages/club.vue'
 import  mine from './pages/mine.vue'
+import  popup from './component/popup.vue'
 export default {
-  data(){
-    return{
-      activedTab:'essence'
-    }
-  },
-  methods:{
-    tabActived(tab){
-      this.activedTab = tab
-    }
-  },
-  computed:{
-    navbarTitle(){
-      switch(this.activedTab){
-        case 'essence':
-          
-      }
-    }
-  },
+  
   components:{
     'essence' : essence,
-    'tab' : tab,
     'club': club,
     'news': news,
-    'mine': mine
+    'mine': mine,
+    'popup' : popup
   }
 }
 </script>
