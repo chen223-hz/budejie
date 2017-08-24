@@ -61,17 +61,17 @@
         <f7-pages>
           <f7-page>
             <f7-toolbar tabbar labels>
-              <f7-link icon="iconfont icon-jinghua" text="精华" tab-link="#tab1" active></f7-link>
-              <f7-link icon="iconfont icon-zuixinjiexiao" text="最新" tab-link="#tab2"></f7-link>
-              <f7-link icon="iconfont icon-bi"></f7-link>
-              <f7-link icon="iconfont icon-shequdibuhuifu" text="社区" tab-link="#tab3"></f7-link>
+              <f7-link icon="iconfont icon-jinghua" text="精华" tab-link="#tab1"></f7-link>
+              <f7-link icon="iconfont icon-zuixinjiexiao" text="最新" tab-link="#tab2" active></f7-link>
+              <f7-link icon="iconfont icon-bi" @click="openloginPopup"></f7-link>
+              <f7-link icon="iconfont icon-shequdibuhuifu" text="社区" tab-link="#tab3"  ></f7-link>
               <f7-link icon="iconfont icon-wode" text="我" tab-link="#tab4"></f7-link>
             </f7-toolbar>
             <f7-tabs>
-              <f7-tab id="tab1" active>
+              <f7-tab id="tab1">
                   <essence></essence>
               </f7-tab>
-              <f7-tab id="tab2">
+              <f7-tab id="tab2" active>
                   <news></news>
               </f7-tab>
               <f7-tab id="tab3">
@@ -87,33 +87,7 @@
     </f7-views>
     <!-- popup -->
     <popup></popup>
-
-    <!-- Login Screen -->
-    <f7-login-screen id="login-screen">
-      <f7-view>
-        <f7-pages>
-          <f7-page login-screen>
-            <f7-login-screen-title>Login</f7-login-screen-title>
-            <f7-list form>
-              <f7-list-item>
-                <f7-label>Username</f7-label>
-                <f7-input name="username" placeholder="Username" type="text"></f7-input>
-              </f7-list-item>
-              <f7-list-item>
-                <f7-label>Password</f7-label>
-                <f7-input name="password" type="password" placeholder="Password"></f7-input>
-              </f7-list-item>
-            </f7-list>
-            <f7-list>
-              <f7-list-button title="Sign In" close-login-screen></f7-list-button>
-              <f7-list-label>
-                <p>Click Sign In to close Login Screen</p>
-              </f7-list-label>
-            </f7-list>
-          </f7-page>
-        </f7-pages>
-      </f7-view>
-    </f7-login-screen>
+    <loginPopup></loginPopup>
   </div>
 </template>
 
@@ -123,6 +97,7 @@ import  news from './pages/new.vue'
 import  club from './pages/club.vue'
 import  mine from './pages/mine.vue'
 import  popup from './component/popup.vue'
+import  loginPopup from './component/loginPopup.vue'
 export default {
   
   components:{
@@ -130,7 +105,19 @@ export default {
     'club': club,
     'news': news,
     'mine': mine,
-    'popup' : popup
+    'popup' : popup,
+    'loginPopup' : loginPopup 
+  },
+  methods:{
+    openloginPopup() {
+                this.$f7.popup('#loginPopup')
+            }
   }
 }
 </script>
+<style>
+    .content-block{
+       padding:0;
+       margin:0px;
+    }
+</style>

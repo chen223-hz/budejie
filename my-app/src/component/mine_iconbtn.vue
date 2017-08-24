@@ -1,6 +1,6 @@
 <template>
     <f7-col :width="width">
-        <f7-link :href="link">
+        <f7-link>
             <div class="iconbtn">
                 <img :src="href" width="25" height="25">
                 <div>{{title}}</div>
