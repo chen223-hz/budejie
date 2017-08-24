@@ -1,6 +1,6 @@
 <template>
     <div>
-        <f7-card>
+        <f7-card v-if="msg == '1'">
             <f7-card-header>
                 <div class="avatar">
                     <img width="34" height="34" :src="data.avatar">
@@ -39,6 +39,7 @@
 </template>
 <script>
     import header_data from '../json/header_data.json'
+    import { bus } from '../js/bus.js'
     export default{
         props:{
             data:{
@@ -52,6 +53,7 @@
         },
         data(){
             return {
+                msg:'',
             }
         },
         methods:{
@@ -68,6 +70,9 @@
             }
         },
         mounted(){
+            bus.$on('qq', (text) => { //Hub接收事件
+                this.msg = text
+            });
     }
     }
 </script>

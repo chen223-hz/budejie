@@ -3,7 +3,7 @@
     <f7-navbar title="Tabs"></f7-navbar>
     <f7-toolbar tabbar tabbar-scrollable>
             <f7-buttons>
-                <f7-button v-for="(item,index) in items"  :class="item.classname" :text="item.text" :key="item.id"></f7-button>
+                <f7-button v-for="(item,index) in items"  :class="item.classname" :text="item.text" :key="item.id" @click = "btn(index)">{{index}}</f7-button>
             </f7-buttons>
     </f7-toolbar>
     <f7-page-content tab id="tab4" active>
@@ -17,6 +17,7 @@
     import Card from '../component/card.vue'
     import header_data from '../json/header_data.json'
     import items from '../json/button_title.json'
+    import { bus } from '../js/bus.js'
     export default{
         props:['text','classname'],
         components:{
@@ -25,7 +26,7 @@
         data(){
             return{
                 cards:'',
-                items:[]
+                items:[],
             }
         },
         methods: {
@@ -35,7 +36,11 @@
             },
             getData(){
                     this.items = items.data
-                }
+                },
+            btn(index){
+                bus.$emit('qq',index)
+            }
+            
         },
         mounted(){
             var cards

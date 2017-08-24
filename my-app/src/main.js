@@ -53,3 +53,4 @@ new Vue({
     app: App
   }
 });
+var bus = new Vue()
