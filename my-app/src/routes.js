@@ -15,5 +15,9 @@ export default [
   {
       path:'/post/',
       component: require('./pages/post.vue')
+  },
+  {
+      path:'/mine/',
+      component: require('./pages/mine.vue')
   }
 ]
