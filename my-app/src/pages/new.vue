@@ -25,8 +25,7 @@
         data(){
             return{
                 cards:'',
-                items:[],
-                item:'',
+                items:[]
             }
         },
         methods: {
@@ -37,7 +36,6 @@
             getData(){
                     this.items = items.data
                 }
-            
         },
         mounted(){
             var cards

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <f7-card v-if="item.index == '1'">
+        <f7-card>
             <f7-card-header>
                 <div class="avatar">
                     <img width="34" height="34" :src="data.avatar">
@@ -32,7 +32,7 @@
                 </f7-link>                                  
             </f7-card-footer>
         </f7-card>
-        <f7-card v-else>
+        <f7-card>
             
         </f7-card>
     </div>
@@ -48,10 +48,6 @@
             enableToolbar:{
                 type:Boolean,
                 default:true
-            },
-            index:{
-                type:String,
-                default:''
             }
         },
         data(){
