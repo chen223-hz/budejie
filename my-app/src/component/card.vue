@@ -32,9 +32,12 @@
                 </f7-link>                                  
             </f7-card-footer>
         </f7-card>
-        <f7-card>
-            
-        </f7-card>
+        <div v-else>
+            <div style="float:left;width:49%;border:1px solid #fff;height:200px;">
+                aaaaa
+            </div>
+          
+        </div>
     </div>
 </template>
 <script>
@@ -73,7 +76,7 @@
             bus.$on('qq', (text) => { //Hub接收事件
                 this.msg = text
             });
-    }
+        }
     }
 </script>
 <style scoped>
