@@ -6,7 +6,6 @@
                 <f7-button v-for="(item,index) in items"  :class="item.classname" :text="item.text" :key="item.id" @click = "btn(index)">{{index}}</f7-button>
             </f7-buttons>
     </f7-toolbar>
-    <f7-page  infinite-scroll >
         <div class="content-block">
                 <Card v-for="card in cards" :data="card" :key="card.id" @card:content-click="routeToPost"></Card>
                 <infinite-loading :on-infinite="onInfinite" ref="infiniteLoading">
@@ -15,7 +14,6 @@
                     </span>
                 </infinite-loading>
         </div>
-    </f7-page>
 </div>
 </template>
 <script>
@@ -46,7 +44,6 @@
         methods: {
             routeToPost(data) {
                 this.$f7.mainView.router.load({url: `/post/?avatar=${data.avatar}&username=${data.username}&userdate=${data.userdate}&text=${data.text}`})
-                console.log(data)
             },
             getData(){
                     this.items = items.data
@@ -66,7 +63,7 @@
         },
         mounted(){
             var cards
-            this.$http.get('http://192.168.88.245:8000/text/').then(response => {
+            this.$http.get('http://10.1.0.17:8000/text/').then(response => {
                 this.cards = response.data.data;
             }, response => {
             // error callback

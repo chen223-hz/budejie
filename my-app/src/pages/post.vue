@@ -2,7 +2,7 @@
     <f7-page class="post-page" navbar-fixed toolbar-fixed>
         <f7-navbar  title="正文" back-link="返回" sliding>
         </f7-navbar>
-        <Card :data="post" :enableToolbar="false"></Card>
+        <Card :data="post" :enableToolbar="false" ></Card>
         <div class="comments">
             <div class="title">评论</div>
             <div class="list">
@@ -59,7 +59,7 @@
                 post:{
                     type:Object
                 },
-                comments: []
+                comments: [],
             }
         },
         mounted() {
@@ -69,9 +69,6 @@
         },
         methods:{
             getComments(){
-            //     axios.get('').then(res => {
-            //     this.comments = res.data
-            // })
             this.comments = comments.data
             }
         }
