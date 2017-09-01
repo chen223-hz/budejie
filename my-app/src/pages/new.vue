@@ -22,7 +22,6 @@
     import items from '../json/button_title.json'
     import { bus } from '../js/bus.js'
     import InfiniteLoading from 'vue-infinite-loading'
-    import axios from 'axios';
     export default{
         props:['text','classname'],
         components:{
@@ -47,11 +46,11 @@
             },
             getData(){
                     this.items = items.data
-            },
+                },
             btn(index){
                 bus.$emit('qq',index)
             },
-            onInfinite(){
+            onInfinite() {
                 setTimeout(() => {
                     const temp = [];
                     for (let i = this.items.length + 1; i <= this.items.length + 20; i++) {
@@ -63,7 +62,7 @@
         },
         mounted(){
             var cards
-            this.$http.get('http://10.1.0.17:8000/text/').then(response => {
+            this.$http.get('http://10.10.11.232:8000/text/').then(response => {
                 this.cards = response.data.data;
             }, response => {
             // error callback

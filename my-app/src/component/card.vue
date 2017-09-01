@@ -32,43 +32,19 @@
                 </f7-link>                                  
             </f7-card-footer>
         </f7-card>
-        <f7-card v-else>
-            <f7-card-header>
-                <div class="avatar">
-                    <img width="34" height="34" :src="data.avatar">
+        <div v-else>
+            <f7-link @click="videoclick">
+                <div style="float:left;width:49%;border:1px solid #fff;">
+                      <my-video :sources="video.sources" :options="video.options"></my-video>
                 </div>
-                <div class="username">{{data.username}}</div>
-                <div class="userdate">{{data.userdate}}</div>
-            </f7-card-header>
-            <f7-link @click="contentclick(data)">
-            <f7-card-content class="text">
-                {{data.text}}
-            </f7-card-content>
             </f7-link>
-            <f7-card-footer v-if="enableToolbar" >
-                <f7-link @click="dianzan">
-                    <span class="iconfont icon-iconlikenum" ></span>
-                    <span id="zan">赞</span>
-                </f7-link> 
-                <f7-link>
-                    <span class="iconfont icon-buxihuan"></span>
-                    <span>踩</span>
-                </f7-link> 
-                <f7-link>
-                    <span class="iconfont icon-pinglun"></span>
-                    <span>评论</span>
-                </f7-link> 
-                <f7-link>
-                    <span class="iconfont icon-fenxiang"></span>
-                    <span >分享</span>
-                </f7-link>                                  
-            </f7-card-footer>
-        </f7-card>
+        </div>
     </div>
 </template>
 <script>
     import header_data from '../json/header_data.json'
     import { bus } from '../js/bus.js'
+    import myVideo from 'vue-video'
     export default{
         props:{
             data:{
@@ -82,7 +58,18 @@
         },
         data(){
             return {
-                msg:"",
+                msg:'',
+                video: {
+                    sources: [{
+                        src: 'http://covteam.u.qiniudn.com/oceans.mp4',
+                        type: 'video/mp4'
+                    }],
+                    options: {
+                        autoplay: false,
+                        volume: 0.6,
+                        poster: 'http://covteam.u.qiniudn.com/poster.png'
+                    }
+                }
             }
         },
         methods:{
@@ -96,12 +83,20 @@
             },
             contentclick(data){
                 this.$emit('card:content-click', data);
-            }
+            },
+            videoclick(){
+                  this.$f7.mainView.router.load({url:'/video/'})
+            },
+             
         },
         mounted(){
             bus.$on('qq', (text) => { //Hub接收事件
                 this.msg = text
-            });
+            })
+        },
+     
+        components:{
+            myVideo
         }
     }
 </script>

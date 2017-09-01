@@ -30,12 +30,14 @@ import Icon from './icon/iconfont.css'
 // Import App Component
 import App from './app'
 
+
 import axios from 'axios';
 Vue.prototype.$http = axios
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
 Vue.use(VueRouter)
+
 // Init App
 new Vue({
   el: '#app',
