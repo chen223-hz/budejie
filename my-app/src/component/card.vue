@@ -33,16 +33,18 @@
             </f7-card-footer>
         </f7-card>
         <div v-else>
-            <div style="float:left;width:49%;border:1px solid #fff;height:200px;">
-                aaaaa
-            </div>
-          
+            <f7-link @click="videoclick">
+                <div style="float:left;width:49%;border:1px solid #fff;">
+                      <my-video :sources="video.sources" :options="video.options"></my-video>
+                </div>
+            </f7-link>
         </div>
     </div>
 </template>
 <script>
     import header_data from '../json/header_data.json'
     import { bus } from '../js/bus.js'
+    import myVideo from 'vue-video'
     export default{
         props:{
             data:{
@@ -57,6 +59,17 @@
         data(){
             return {
                 msg:'',
+                video: {
+                    sources: [{
+                        src: 'http://covteam.u.qiniudn.com/oceans.mp4',
+                        type: 'video/mp4'
+                    }],
+                    options: {
+                        autoplay: false,
+                        volume: 0.6,
+                        poster: 'http://covteam.u.qiniudn.com/poster.png'
+                    }
+                }
             }
         },
         methods:{
@@ -70,12 +83,20 @@
             },
             contentclick(data){
                 this.$emit('card:content-click', data);
-            }
+            },
+            videoclick(){
+                  this.$f7.mainView.router.load({url:'/video/'})
+            },
+             
         },
         mounted(){
             bus.$on('qq', (text) => { //Hub接收事件
                 this.msg = text
-            });
+            })
+        },
+     
+        components:{
+            myVideo
         }
     }
 </script>

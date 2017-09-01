@@ -1,8 +1,25 @@
 <template>
-    <f7-page  navbar-fixed toolbar-fixed>
+     <f7-page  navbar-fixed toolbar-fixed>
         <f7-navbar  title="正文" back-link="返回" sliding>
+             <f7-card-footer>
+            <f7-link>
+                <span class="iconfont icon-iconlikenum" ></span>
+                <span id="zan">赞</span>
+            </f7-link> 
+            <f7-link>
+                <span class="iconfont icon-buxihuan"></span>
+                <span>踩</span>
+            </f7-link> 
+            <f7-link>
+                <span class="iconfont icon-pinglun"></span>
+                <span>评论</span>
+            </f7-link> 
+            <f7-link>
+                <span class="iconfont icon-fenxiang"></span>
+                <span >分享</span>
+            </f7-link>                                  
+        </f7-card-footer>
         </f7-navbar>
-        <Card :data="post" :enableToolbar="false"></Card>
         <div class="comments">
             <div class="title">评论</div>
             <div class="list">
@@ -24,24 +41,7 @@
                 </div>
             </div>
         </div>
-        <f7-card-footer>
-            <f7-link>
-                <span class="iconfont icon-iconlikenum" ></span>
-                <span id="zan">赞</span>
-            </f7-link> 
-            <f7-link>
-                <span class="iconfont icon-buxihuan"></span>
-                <span>踩</span>
-            </f7-link> 
-            <f7-link>
-                <span class="iconfont icon-pinglun"></span>
-                <span>评论</span>
-            </f7-link> 
-            <f7-link>
-                <span class="iconfont icon-fenxiang"></span>
-                <span >分享</span>
-            </f7-link>                                  
-        </f7-card-footer>
+       
     </f7-page>
 </template>
 <script>
@@ -71,10 +71,11 @@
             getComments(){
             //     axios.get('').then(res => {
             //     this.comments = res.data
-            // })
-            this.comments = comments.data
+            //     })
+            this.comments = comments.data 
             }
         }
 
     }
 </script>
+</template>
