@@ -20,6 +20,7 @@
             </f7-link>                                  
         </f7-card-footer>
         </f7-navbar>
+          <Card :data="post" :enableToolbar="false"></Card>
         <div class="comments">
             <div class="title">评论</div>
             <div class="list">
@@ -63,6 +64,7 @@
             }
         },
         mounted() {
+            
             var query = this.$route.query
             this.post = query
             this.getComments()

@@ -49,6 +49,7 @@
     import Card from '../component/card.vue'
     import comments from '../json/comments.json'
     import find from 'lodash/find'
+    import { bus } from '../js/bus.js'
 
     export default{
         components:{
@@ -63,6 +64,9 @@
             }
         },
         mounted() {
+            bus.$on('qq', (text) => { //Hub接收事件
+                console.log(text)
+            })
             var query = this.$route.query
             this.post = query
             this.getComments()
