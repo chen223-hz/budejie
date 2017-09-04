@@ -20,7 +20,7 @@
     import Card from '../component/card.vue'
     import header_data from '../json/header_data.json'
     import items from '../json/button_title.json'
-    import { bus } from '../js/bus.js'
+    // import { bus } from '../js/bus.js'
     import InfiniteLoading from 'vue-infinite-loading'
     export default{
         props:['text','classname'],
@@ -42,13 +42,26 @@
         },
         methods: {
             routeToPost(data) {
-                this.$f7.mainView.router.load({url: `/post/?avatar=${data.avatar}&username=${data.username}&userdate=${data.userdate}&text=${data.text}`})
+                this.$f7.mainView.router.load({url: `/post/?avatar=${data.avatar}&username=${data.username}&userdate=${data.userdate}&text=${data.text}&type=${data.type}`})
             },
             getData(){
                     this.items = items.data
                 },
             btn(index){
-                bus.$emit('qq',index)
+                // bus.$emit('qq',index)
+                if(index=='1'){
+                    this.$http.get('http://10.10.11.232:8000/text/').then(response => {
+                        this.cards = response.data.data;
+                    }, response => {
+                    // error callback
+                    })
+                }else if(index=='2'){
+                    this.$http.get('http://10.10.11.232:8000/video/').then(response => {
+                        this.cards = response.data.data;
+                    }, response => {
+                    // error callback
+                    })
+                }
             },
             onInfinite() {
                 setTimeout(() => {

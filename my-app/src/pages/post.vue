@@ -66,6 +66,7 @@
             var query = this.$route.query
             this.post = query
             this.getComments()
+            console.log(query)
         },
         methods:{
             getComments(){

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <f7-card v-if="msg == '1'">
+        <f7-card>
             <f7-card-header>
                 <div class="avatar">
                     <img width="34" height="34" :src="data.avatar">
@@ -9,10 +9,18 @@
                 <div class="userdate">{{data.userdate}}</div>
             </f7-card-header>
             <f7-link @click="contentclick(data)">
-            <f7-card-content class="text">
+            <f7-card-content v-if="data.type=='text'" class="text">
                 {{data.text}}
             </f7-card-content>
+            <f7-card-content v-if="data.type=='mp4'">
+                <my-video :sources="video.sources" :options="video.options"></my-video>
+            </f7-card-content>
             </f7-link>
+<!--             <f7-link v-if="data.type=='mp4'" @click="videoclick">
+                <div style="float:left;width:49%;border:1px solid #fff;">
+                      <my-video :sources="video.sources" :options="video.options"></my-video>
+                </div>
+            </f7-link> -->
             <f7-card-footer v-if="enableToolbar" >
                 <f7-link @click="dianzan">
                     <span class="iconfont icon-iconlikenum" ></span>
@@ -32,18 +40,10 @@
                 </f7-link>                                  
             </f7-card-footer>
         </f7-card>
-        <div v-else>
-            <f7-link @click="videoclick">
-                <div style="float:left;width:49%;border:1px solid #fff;">
-                      <my-video :sources="video.sources" :options="video.options"></my-video>
-                </div>
-            </f7-link>
-        </div>
     </div>
 </template>
 <script>
     import header_data from '../json/header_data.json'
-    import { bus } from '../js/bus.js'
     import myVideo from 'vue-video'
     export default{
         props:{
@@ -58,10 +58,10 @@
         },
         data(){
             return {
-                msg:'',
+                // msg:'',
                 video: {
                     sources: [{
-                        src: 'http://covteam.u.qiniudn.com/oceans.mp4',
+                        src: 'http://vjs.zencdn.net/v/oceans.mp4',
                         type: 'video/mp4'
                     }],
                     options: {
@@ -90,9 +90,9 @@
              
         },
         mounted(){
-            bus.$on('qq', (text) => { //Hub接收事件
-                this.msg = text
-            })
+            // bus.$on('qq', (text) => { //Hub接收事件
+            //     this.msg = text
+            // })
         },
      
         components:{
