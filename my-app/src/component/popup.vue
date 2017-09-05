@@ -3,19 +3,18 @@
       <f7-view navbar-fixed>
         <f7-pages>
           <f7-page>
-            <f7-navbar title="登录">
-              <f7-nav-right>
+            <f7-navbar>
+              <f7-nav-left>
                 <f7-link close-popup>取消</f7-link>
-              </f7-nav-right>
+              </f7-nav-left>
             </f7-navbar>
-            <f7-block>
-              <p v-show="showTishi">{{tishi}}</p>
-              <input type="text" placeholder="请输入用户名" v-model="username">
-              <input type="password" placeholder="请输入密码" v-model="password">
-              <f7-button @click="login"> 登录</f7-button>
-              <f7-button @click="logout"> 注销</f7-button>
+            <f7-block class="popup-login">
+            
               <f7-button>微信登录</f7-button>
-              <f7-button>QQ登录</f7-button>              
+              <f7-button>QQ登录</f7-button> 
+              <f7-link >
+                其他登录方式>
+              </f7-link>
             </f7-block>
           </f7-page>
         </f7-pages>
@@ -79,5 +78,16 @@ import {setCookie,getCookie,delCookie} from '../js/cookie.js'
 <style>
     .button{
         margin:20px 0;
+    }
+    .navbar .left{
+        margin-left:10px;
+    }
+    .popup-login{
+        width: 50%;
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        margin-left: -93px;
+        text-align:center;
     }
 </style>

@@ -1,0 +1,35 @@
+{
+    "data":[
+        {
+            "title": "发视频",
+            "icon" : "jinghua",
+            "href" : "/about/"
+        },
+        {
+            "title": "发图片",
+            "icon" : "iconlikenum",
+            "href" : "/about/"
+        },
+        {
+            "title": "发段子",
+            "icon" : "shoucang1",
+            "href" : "/about/"
+        },
+        {
+            "title": "发声音",
+            "icon" : "zuixinjiexiao",
+            "href" : "/about/"
+        },
+        {
+            "title": "发链接",
+            "icon" : "baoyou1",
+            "href" : "/about/"
+        },
+        {
+            "title": "音乐相册",
+            "icon" : "baoyou1",
+            "href" : "/about/"
+        }
+        
+    ]
+}

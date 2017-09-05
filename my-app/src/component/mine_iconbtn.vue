@@ -2,7 +2,7 @@
     <f7-col :width="width">
         <f7-link>
             <div class="iconbtn">
-                <img :src="href" width="25" height="25">
+                <i :class="'iconfont icon-'+icon" width="25" height="25"></i>
                 <div>{{title}}</div>
             </div>
         </f7-link>
@@ -10,11 +10,12 @@
 </template>
 <script>
     export default{
-        props:['title','img','href','width']
+        props:['title','icon','href','width']
     }
 </script>
 <style>
     .iconbtn{
         text-align:center;
     }
+    
 </style>

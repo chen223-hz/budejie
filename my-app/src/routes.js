@@ -19,9 +19,5 @@ export default [
   {
       path:'/mine/',
       component: require('./pages/mine.vue')
-  },
-  {
-      path:'/video/',
-      component:require('./pages/video.vue')
   }
 ]

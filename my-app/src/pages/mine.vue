@@ -79,13 +79,13 @@ import {setCookie,getCookie,delCookie} from '../js/cookie.js'
         </f7-navbar>
         <f7-block>
             <f7-link  @click=" openPopup">
-                <div class="content-block-title"><img src="">登录/注册</div>
+                <div class="content-block-title"><i class="iconfont icon-wode1"></i>登录/注册</div>
             </f7-link>
             <f7-grid > 
-                <mine-iconbtn v-for="mine in mines" :title="mine.title"  :href="mine.href" width="20" :key="mine.id"></mine-iconbtn>                 
+                <mine-iconbtn v-for="mine in mines" :title="mine.title"  :href="mine.href" :icon="mine.icon" width="20" :key="mine.id"></mine-iconbtn>                 
             </f7-grid>
             <f7-grid > 
-                <mine-iconbtn v-for="mine in mines" :title="mine.title"  :href="mine.href" width="20"  :key="mine.id"></mine-iconbtn>                 
+                <mine-iconbtn v-for="mine in mines" :title="mine.title"  :href="mine.href" :icon="mine.icon" width="20"  :key="mine.id"></mine-iconbtn>                 
             </f7-grid>
             <f7-link href="/about/">
                 <div class="content-block-title">败家姐<i class="iconfont icon-xiangyou"></i></div>
@@ -131,8 +131,5 @@ import {setCookie,getCookie,delCookie} from '../js/cookie.js'
     .icon-xiangyou{
         float:right;
     }
-    img{
-        width:20px;
-        height:20px;
-    }
+    
 </style>

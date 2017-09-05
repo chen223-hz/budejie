@@ -8,9 +8,10 @@
                     <f7-list-group group>
                         <f7-list-item  v-for="club in clubs " 
                             :link  = "club.link"
-                            :media = "club.media"
+                            :src="img"
                             :title = "club.tilte" 
                             :after = "club.after"  :key="club.id">  
+                            
                         </f7-list-item>
                     </f7-list-group>
                 </f7-list>
@@ -20,7 +21,7 @@
 <script>
 import clubs from '../json/club.json'
     export default{
-        props:['title','after'],
+        props:['title','after','media','img'],
         data(){
             return{
                 clubs: []

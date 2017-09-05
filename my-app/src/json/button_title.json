@@ -15,26 +15,6 @@
         {
             "text": "段子",
             "classname":"show-word"
-        },
-        {
-            "text": "互动区",
-            "classname":"show-interactive"
-        },
-        {
-            "text": "自拍交友",
-            "classname":"show-friend"
-        },
-        {
-            "text": "社会",
-            "classname":"show-society"
-        },
-        {
-            "text": "影视分享",
-            "classname":"share"
-        },
-        {
-            "text": "游戏",
-            "classname":"show-game"
         }
     ]
 }

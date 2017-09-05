@@ -4,25 +4,25 @@
             "title": "排行榜",
             "after": "更新24条",
             "link" : "/about/",
-            "media": "image.jpg"
+            "img": "require('../css/tou.png')"
         },
         {
             "title": "排行榜",
             "after": "更新24条",
             "link" : "/about/",
-            "media": "image.jpg"
+            "img": "require('../css/tou.png')"
         },
         {
             "title": "排行榜",
             "after": "更新24条",
             "link" : "/about/",
-            "media": "image.jpg"
+            "img": "require('../css/tou.png')"
         },
         {
             "title": "排行榜",
             "after": "更新24条",
             "link" : "/about/",
-            "media": "image.jpg"
+            "img": "require('../css/tou.png')"
         }
     ]
 }

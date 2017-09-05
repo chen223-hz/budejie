@@ -2,28 +2,29 @@
     "data":[
         {
             "title": "排行榜",
-            "img" : "require('')",
+            "icon" : "jinghua",
             "href" : "/about/"
         },
         {
             "title": "审帖",
-            "img" : "require('')",
+            "icon" : "iconlikenum",
             "href" : "/about/"
         },
         {
             "title": "我的收藏",
-            "img" : "require('')",
+            "icon" : "shoucang1",
             "href" : "/about/"
         },
         {
             "title": "内容贡献",
-            "img" : "require('')",
+            "icon" : "zuixinjiexiao",
             "href" : "/about/"
         },
         {
             "title": "随机穿越",
-            "img" : "require('')",
+            "icon" : "baoyou1",
             "href" : "/about/"
         }
+        
     ]
 }

@@ -65,7 +65,7 @@
               <f7-link icon="iconfont icon-zuixinjiexiao" text="最新" tab-link="#tab2" active></f7-link>
               <f7-link icon="iconfont icon-bi" @click="openloginPopup"></f7-link>
               <f7-link icon="iconfont icon-shequdibuhuifu" text="社区" tab-link="#tab3"  ></f7-link>
-              <f7-link icon="iconfont icon-wode" text="我" tab-link="#tab7"></f7-link>
+              <f7-link icon="iconfont icon-wode1" text="我" tab-link="#tab7"></f7-link>
             </f7-toolbar>
             <f7-tabs>
               <f7-tab id="tab1">
