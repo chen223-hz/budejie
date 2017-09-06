@@ -14,7 +14,7 @@
             </f7-card-content>
             <f7-card-content v-if="data.type=='mp4'">
                 <videoPlayer  class="vjs-custom-skin"
-                         ref="Player"
+                         ref="videoPlayer"
                          :options="playerOptions"
                          :playsinline="true"
                          @play="onPlayerPlay($event)"
@@ -100,7 +100,6 @@
             },
             contentclick(data){
                 this.$emit('card:content-click', data);
-                console.log(data)
             },
             videoclick(){
                   this.$f7.mainView.router.load({url:'/video/'})
@@ -133,6 +132,7 @@
             // bus.$on('qq', (text) => { //Hub接收事件
             //     this.msg = text
             // })
+            console.log(this)
              setTimeout(() => {
                 this.player.muted(false)
             }, 2000)
