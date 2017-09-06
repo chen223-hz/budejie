@@ -8,14 +8,12 @@
                 <div class="username">{{data.username}}</div>
                 <div class="userdate">{{data.userdate}}</div>
             </f7-card-header>
-            <f7-link @click="contentclick(data)">
+            <f7-link >
             <f7-card-content v-if="data.type=='text'" class="text">
                 {{data.text}}
             </f7-card-content>
             <f7-card-content v-if="data.type=='mp4'">
-
-               <videoVue></videoVue>
-
+               <videoVue :data="data.text"></videoVue>
             </f7-card-content>
             </f7-link>
 <!--             <f7-link v-if="data.type=='mp4'" @click="videoclick">
@@ -74,7 +72,6 @@
             },
             contentclick(data){
                 this.$emit('card:content-click', data);
-                console.log(data)
             },
             videoclick(){
                   this.$f7.mainView.router.load({url:'/video/'})
@@ -84,7 +81,6 @@
             // bus.$on('qq', (text) => { //Hub接收事件
             //     this.msg = text
             // })
-           
         },
         components: {
             videoVue
