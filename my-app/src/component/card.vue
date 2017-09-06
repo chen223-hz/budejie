@@ -13,7 +13,7 @@
                 {{data.text}}
             </f7-card-content>
             <f7-card-content v-if="data.type=='mp4'">
-                <my-video :sources="video.sources" :options="video.options"></my-video>
+                <my-video :sources="data.text.sources" :options="video.options"></my-video>
             </f7-card-content>
             </f7-link>
 <!--             <f7-link v-if="data.type=='mp4'" @click="videoclick">
@@ -61,7 +61,7 @@
                 // msg:'',
                 video: {
                     sources: [{
-                        src: 'http://vjs.zencdn.net/v/oceans.mp4',
+                        src: 'http://mvideo.spriteapp.cn/video/2017/0905/657dd92091e911e78d98842b2b4c75ab_wpcco.mp4',
                         type: 'video/mp4'
                     }],
                     options: {
@@ -83,6 +83,7 @@
             },
             contentclick(data){
                 this.$emit('card:content-click', data);
+                console.log(data)
             },
             videoclick(){
                   this.$f7.mainView.router.load({url:'/video/'})
