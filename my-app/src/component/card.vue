@@ -13,23 +13,7 @@
                 {{data.text}}
             </f7-card-content>
             <f7-card-content v-if="data.type=='mp4'">
-                <videoPlayer  class="vjs-custom-skin"
-                         ref="videoPlayer"
-                         :options="playerOptions"
-                         :playsinline="true"
-                         @play="onPlayerPlay($event)"
-                         @pause="onPlayerPause($event)"
-                         @ended="onPlayerEnded($event)"
-                         @loadeddata="onPlayerLoadeddata($event)"
-                         @waiting="onPlayerWaiting($event)"
-                         @playing="onPlayerPlaying($event)"
-                         @timeupdate="onPlayerTimeupdate($event)"
-                         @canplay="onPlayerCanplay($event)"
-                         @canplaythrough="onPlayerCanplaythrough($event)"
-                         @ready="playerReadied"
-                         @statechanged="playerStateChanged($event)">
-                </videoPlayer>
-
+               <videoVue></videoVue>
             </f7-card-content>
             </f7-link>
 <!--             <f7-link v-if="data.type=='mp4'" @click="videoclick">
@@ -60,9 +44,7 @@
 </template>
 <script>
     import header_data from '../json/header_data.json'
-    import { videoPlayer } from 'vue-video-player'
-    require('video.js/dist/video-js.css')
-    require('vue-video-player/src/custom-theme.css')
+    import videoVue from '../component/video.vue'
     export default{
         props:{
             data:{
@@ -77,19 +59,9 @@
         data(){
             return {
                 // msg:'',
-                playerOptions: {
-                    muted: true,
-                    language: 'en',
-                    playbackRates: [0.7, 1.0, 1.5, 2.0],
-                    sources: [{
-                        type: "video/mp4",
-                        src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
-                    }],
-                    poster: "/static/images/author.jpg",
-                }
             }
         },
-        methods:{
+        methods: {
             dianzan(){
                 var zan = document.getElementById('zan');
                 if(zan.innerHTML == "赞"){
@@ -103,47 +75,15 @@
             },
             videoclick(){
                   this.$f7.mainView.router.load({url:'/video/'})
-            },
-            onPlayerPlay(player) {
-            },
-            onPlayerPause(player) {
-            },
-            onPlayerEnded(player) {
-            },
-            onPlayerLoadeddata(player) {
-            },
-            onPlayerWaiting(player) {
-            },
-            onPlayerPlaying(player) {
-            },
-            onPlayerTimeupdate(player) {
-            },
-            onPlayerCanplay(player) {
-            },
-            onPlayerCanplaythrough(player) {
-            },
-            playerStateChanged(playerCurrentState) {
-            },
-            playerReadied(player) {
-                player.currentTime(10)
             }
         },
         mounted(){
             // bus.$on('qq', (text) => { //Hub接收事件
             //     this.msg = text
             // })
-            console.log(this)
-             setTimeout(() => {
-                this.player.muted(false)
-            }, 2000)
-        },
-        computed: {
-            player() {
-                return this.$refs.videoPlayer.player
-            }
         },
         components: {
-            videoPlayer
+            videoVue
         }
     }
 </script>
