@@ -50,13 +50,13 @@
                 },
             btn(index){
                 // bus.$emit('qq',index)
-                if(index=='1'){
+                if(index=='3'){
                     this.$http.get('http://10.10.11.232:8000/text/').then(response => {
                         this.cards = response.data.data;
                     }, response => {
                     // error callback
                     })
-                }else if(index=='2'){
+                }else if(index=='1'){
                     this.$http.get('http://10.10.11.232:8000/video/').then(response => {
                         this.cards = response.data.data;
                     }, response => {

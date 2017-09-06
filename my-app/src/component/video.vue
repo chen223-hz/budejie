@@ -3,7 +3,7 @@
         <div class="player">
           <video-player  class="vjs-custom-skin"
                          ref="videoPlayer"
-                         :options="playerOptions"
+                         :options="data"
                          :playsinline="true"
                          @play="onPlayerPlay($event)"
                          @pause="onPlayerPause($event)"
@@ -27,6 +27,7 @@ import { videoPlayer } from 'vue-video-player'
 require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 export default {
+    props:['data'],
     data() {
       return {
         // videojs options
@@ -44,10 +45,9 @@ export default {
     },
     mounted() {
       // console.log('this is current player instance object', this.player)
-      setTimeout(() => {
         // console.log('dynamic change options', this.player)
         this.player.muted(false)
-      }, 2000)
+
     },
     computed: {
       player() {
@@ -60,6 +60,7 @@ export default {
         // console.log('player play!', player)
       },
       onPlayerPause(player) {
+        player.pause();
         // console.log('player pause!', player)
       },
       onPlayerEnded(player) {
