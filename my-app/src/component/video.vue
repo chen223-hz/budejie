@@ -44,10 +44,10 @@ export default {
     },
     mounted() {
       // console.log('this is current player instance object', this.player)
-      setTimeout(() => {
+      
         // console.log('dynamic change options', this.player)
         this.player.muted(false)
-      }, 2000)
+     
     },
     computed: {
       player() {
