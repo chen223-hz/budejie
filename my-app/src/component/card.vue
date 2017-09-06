@@ -13,7 +13,9 @@
                 {{data.text}}
             </f7-card-content>
             <f7-card-content v-if="data.type=='mp4'">
+
                <videoVue></videoVue>
+
             </f7-card-content>
             </f7-link>
 <!--             <f7-link v-if="data.type=='mp4'" @click="videoclick">
@@ -72,6 +74,7 @@
             },
             contentclick(data){
                 this.$emit('card:content-click', data);
+                console.log(data)
             },
             videoclick(){
                   this.$f7.mainView.router.load({url:'/video/'})
