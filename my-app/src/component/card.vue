@@ -8,13 +8,20 @@
                 <div class="username">{{data.username}}</div>
                 <div class="userdate">{{data.userdate}}</div>
             </f7-card-header>
-            <f7-link>
-            <f7-card-content v-if="data.type=='text'" class="text">
+            <f7-link @click="contentclick(data)" v-if="data.type=='text'">
+            <f7-card-content    class="text">
                 {{data.text}}
             </f7-card-content>
-            <f7-card-content v-if="data.type=='mp4'">
-               <videoVue :data="data.text"></videoVue>
-            </f7-card-content>
+            </f7-link>
+            <f7-link v-if="data.type=='mp4'">
+                <f7-card-content >
+                <videoVue :data="data.text"></videoVue>
+                </f7-card-content>
+            </f7-link>
+            <f7-link v-if="data.type=='jpg/gif'">
+                <f7-card-content >
+                    <img src="" alt="">
+                </f7-card-content>
             </f7-link>
 <!--             <f7-link v-if="data.type=='mp4'" @click="videoclick">
                 <div style="float:left;width:49%;border:1px solid #fff;">
