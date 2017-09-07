@@ -88,4 +88,18 @@
     .buttons-row{
         width:100%;
     }
+    .navbar{
+        position:fixed;
+    }
+    .tabbar{
+        position:fixed;
+        top:43px;
+        
+    }
+    .toolbar:before{
+        background-color:rgba(255,255,255,0);
+    }
+    .content-block{
+        padding-top:90px;
+    }
 </style>

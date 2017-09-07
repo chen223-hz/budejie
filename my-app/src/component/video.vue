@@ -1,7 +1,7 @@
 <template>
-      <div class="item">
+    <div class="item">
         <div class="player">
-          <video-player  class="vjs-custom-skin"
+           <video-player  class="vjs-custom-skin"
                          ref="videoPlayer"
                          :options="data"
                          :playsinline="true"
@@ -16,12 +16,10 @@
                          @canplaythrough="onPlayerCanplaythrough($event)"
                          @ready="playerReadied"
                          @statechanged="playerStateChanged($event)">
-          </video-player>
+           </video-player>
         </div>
-      </div>
-  
+    </div> 
 </template>
-
 <script>
 import { videoPlayer } from 'vue-video-player'
 require('video.js/dist/video-js.css')

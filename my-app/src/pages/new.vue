@@ -1,13 +1,12 @@
 <template>
 <div >   
-    <f7-navbar title="百思不得姐"></f7-navbar>
-    
+        <f7-navbar title="百思不得姐"></f7-navbar>
+        <f7-toolbar tabbar tabbar-scrollable>
+            <f7-buttons>
+                <f7-button v-for="(item,index) in items"  :class="item.classname" :text="item.text" :key="item.id" @click = "btn(index)">{{index}}</f7-button>
+            </f7-buttons>
+        </f7-toolbar>
         <div class="content-block">
-                <f7-toolbar tabbar tabbar-scrollable>
-                    <f7-buttons>
-                        <f7-button v-for="(item,index) in items"  :class="item.classname" :text="item.text" :key="item.id" @click = "btn(index)">{{index}}</f7-button>
-                    </f7-buttons>
-                </f7-toolbar>
                 <Card v-for="card in cards" :data="card" :key="card.id" @card:content-click="routeToPost"></Card>
                 <infinite-loading :on-infinite="onInfinite" ref="infiniteLoading">
                     <span slot="no-more">
@@ -88,5 +87,19 @@
 <style scoped>
     .buttons-row{
         width:100%;
+    }
+    .navbar{
+        position:fixed;
+    }
+    .tabbar{
+        position:fixed;
+        top:43px;
+        
+    }
+    .toolbar:before{
+        background-color:rgba(255,255,255,0);
+    }
+    .content-block{
+        padding-top:90px;
     }
 </style>
