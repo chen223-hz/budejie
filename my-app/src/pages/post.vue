@@ -64,6 +64,10 @@
         },
         mounted() {
             var query = this.$route.query
+            if(query.type == 'mp4'){
+                var text = JSON.parse(query.text)
+                query.text = text
+            }
             this.post = query
             this.getComments()
 
