@@ -45,7 +45,7 @@
         methods: {
             routeToPost(data) {
                 if(typeof(data.text) == 'string'){
-                this.$f7.mainView.router.load({url: `/post/?avatar=${data.avatar}&username=${data.username}&userdate=${data.userdate}&text=${data.text}&type=${data.type}`})
+                this.$f7.mainView.router.load({url: `/post/?avatar=${data.avatar}&username=${data.username}&userdate=${data.userdate}&text=${data.text}&pic=${data.pic}&type=${data.type}`})
             }else{
                 this.$f7.mainView.router.load({url: `/post/?avatar=${data.avatar}&username=${data.username}&userdate=${data.userdate}&text=${JSON.stringify(data.text)}&type=${data.type}`})
             }
@@ -69,6 +69,13 @@
                     }, response => {
                     // error callback
                     })
+                }else if(index=='2'){
+                    this.$http.get('http://10.10.11.232:8000/pic/').then(response => {
+                        this.cards = response.data.data;
+                        this.choose = '2'
+                    }, response => {
+                    // error callback
+                    })
                 }
             },
             onInfinite() {
@@ -85,6 +92,17 @@
                 })
             }else if(this.choose == '1'){
                 this.$http.get('http://10.10.11.232:8000/video/',{params:{page:this.cards.length/20+1}}).then(response => {
+                    const temp = [];
+                    for (let i = 0; i < response.data.data.length; i++) {
+                    temp.push(response.data.data[i]);
+                    }
+                    this.cards = this.cards.concat(temp);
+                    this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded');
+                },response => {
+                    // error callback
+                })
+            }else if(this.choose == '2'){
+                this.$http.get('http://10.10.11.232:8000/pic/',{params:{page:this.cards.length/20+1}}).then(response => {
                     const temp = [];
                     for (let i = 0; i < response.data.data.length; i++) {
                     temp.push(response.data.data[i]);
