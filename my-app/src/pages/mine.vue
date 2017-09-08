@@ -87,9 +87,6 @@ import {setCookie,getCookie,delCookie} from '../js/cookie.js'
             <f7-grid > 
                 <mine-iconbtn v-for="mine in mines" :title="mine.title"  :href="mine.href" :icon="mine.icon" width="20"  :key="mine.id"></mine-iconbtn>                 
             </f7-grid>
-            <f7-link href="/about/">
-                <div class="content-block-title">败家姐<i class="iconfont icon-xiangyou"></i></div>
-            </f7-link>
         </f7-block>
     </div>
 </template>
