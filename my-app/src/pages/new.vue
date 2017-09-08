@@ -3,7 +3,7 @@
         <f7-navbar title="百思不得姐"></f7-navbar>
         <f7-toolbar tabbar tabbar-scrollable>
             <f7-buttons>
-                <f7-button v-for="(item,index) in items"  :class="item.classname" :text="item.text" :key="item.id" @click = "btn(index)">{{index}}</f7-button>
+                <f7-button v-for="(item,index) in items"  :class="item.classname" :text="item.text" :key="item.id" @click = "btn(index)"></f7-button>
             </f7-buttons>
         </f7-toolbar>
         <div class="content-block">
@@ -32,6 +32,8 @@
             return{
                 cards:[],
                 items:[],
+                choose:'3'
+
             }
         },
         props:{
@@ -56,26 +58,43 @@
                 if(index=='3'){
                     this.$http.get('http://10.10.11.232:8000/text/').then(response => {
                         this.cards = response.data.data;
+                        this.choose = '3'
                     }, response => {
                     // error callback
                     })
                 }else if(index=='1'){
                     this.$http.get('http://10.10.11.232:8000/video/').then(response => {
                         this.cards = response.data.data;
+                        this.choose = '1'
                     }, response => {
                     // error callback
                     })
                 }
             },
             onInfinite() {
-                setTimeout(() => {
+                if(this.choose == '3'){
+                this.$http.get('http://10.10.11.232:8000/text/',{params:{page:this.cards.length/20+1}}).then(response => {
                     const temp = [];
-                    for (let i = this.items.length + 1; i <= this.items.length + 20; i++) {
-                    temp.push(i);
+                    for (let i = 0; i < response.data.data.length; i++) {
+                    temp.push(response.data.data[i]);
                     }
                     this.cards = this.cards.concat(temp);
                     this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded');
-                }, 1000);
+                },response => {
+                    // error callback
+                })
+            }else if(this.choose == '1'){
+                this.$http.get('http://10.10.11.232:8000/video/',{params:{page:this.cards.length/20+1}}).then(response => {
+                    const temp = [];
+                    for (let i = 0; i < response.data.data.length; i++) {
+                    temp.push(response.data.data[i]);
+                    }
+                    this.cards = this.cards.concat(temp);
+                    this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded');
+                },response => {
+                    // error callback
+                })
+            }
             }
         },
         mounted(){
