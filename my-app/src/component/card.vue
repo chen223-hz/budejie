@@ -15,8 +15,9 @@
             <f7-card-content v-if="data.type=='mp4'" class="text">
                 <videoVue :data="data.text"></videoVue>
             </f7-card-content>
-            <f7-card-content v-if="data.type=='jpg/gif'" class="text">
-                <img src="" alt="">
+            <f7-card-content v-if="data.type=='pic'" class="text">
+                <div>{{data.text}}</div>
+                <img :src="data.pic" alt="">
             </f7-card-content>
             </f7-link>
 <!--             <f7-link v-if="data.type=='mp4'" @click="videoclick">
