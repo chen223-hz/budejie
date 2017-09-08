@@ -1,8 +1,8 @@
 
 export default [
   {
-      path: '/about/',
-      component: require('./pages/about.vue')
+      path: '/block/',
+      component: require('./pages/clubblock.vue')
   },
   {
       path: '/form/',

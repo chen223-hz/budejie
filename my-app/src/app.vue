@@ -120,4 +120,13 @@ export default {
        padding:0;
        margin:0px;
     }
+    .icon-bi{
+      width: 38px;
+      background: #e50541;
+      text-align: center;
+      border-radius: 50px;
+      height: 38px!important;
+      line-height: 37px;
+      color: #fff;
+    }
 </style>
