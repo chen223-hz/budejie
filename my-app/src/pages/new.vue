@@ -42,7 +42,11 @@
         },
         methods: {
             routeToPost(data) {
+                if(typeof(data.text) == 'string'){
                 this.$f7.mainView.router.load({url: `/post/?avatar=${data.avatar}&username=${data.username}&userdate=${data.userdate}&text=${data.text}&type=${data.type}`})
+            }else{
+                this.$f7.mainView.router.load({url: `/post/?avatar=${data.avatar}&username=${data.username}&userdate=${data.userdate}&text=${JSON.stringify(data.text)}&type=${data.type}`})
+            }
             },
             getData(){
                     this.items = items.data
