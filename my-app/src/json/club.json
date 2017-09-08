@@ -1,28 +1,31 @@
 {
     "data":[
         {
-            "title": "排行榜",
-            "after": "更新24条",
+            "text": "更新24条",
             "link" : "/about/",
-            "img": "require('../css/tou.png')"
+            "img": "../css/tou.png",
+            "title":"自拍社区"
         },
         {
-            "title": "排行榜",
-            "after": "更新24条",
+            "text": "更新24条",
             "link" : "/about/",
-            "img": "require('../css/tou.png')"
-        },
-        {
-            "title": "排行榜",
-            "after": "更新24条",
+            "img": "../css/tou.png",
+            "title":"红人频道"
+        },{
+            "text": "更新24条",
             "link" : "/about/",
-            "img": "require('../css/tou.png')"
-        },
-        {
-            "title": "排行榜",
-            "after": "更新24条",
+            "img": "../css/tou.png",
+            "title":"报销gif"
+        },{
+            "text": "更新24条",
             "link" : "/about/",
-            "img": "require('../css/tou.png')"
+            "img": "../css/tou.png",
+            "title":"搞笑图片"
+        },{
+            "text": "更新24条",
+            "link" : "/about/",
+            "img": "../css/tou.png",
+            "title":"社会新闻"
         }
     ]
 }

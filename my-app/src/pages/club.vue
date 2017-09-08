@@ -5,26 +5,21 @@
         </f7-navbar>
         <f7-block>
                 <f7-list media-list>
-                    <f7-list-group group>
-                        <f7-list-item  v-for="club in clubs " 
-                            :link  = "club.link"
-                            :src="img"
-                            :title = "club.tilte" 
-                            :after = "club.after"  :key="club.id">  
-                            
-                        </f7-list-item>
-                    </f7-list-group>
+                    <ul>
+                        <clubList v-for="(club, index) in clubs" :title="club.title" :img="club.img" :text="club.text" :href="club.link"  ></clubList>
+                    </ul>
                 </f7-list>
         </f7-block>
     </div>
 </template>
 <script>
 import clubs from '../json/club.json'
+import clubList from '../component/club_list.vue'
     export default{
-        props:['title','after','media','img'],
+        props:['href','text','img','title'],
         data(){
             return{
-                clubs: []
+                clubs:''
             }
         },
         methods:{
@@ -35,7 +30,10 @@ import clubs from '../json/club.json'
         mounted (){
                 this.getData()
             
-            }
+        },
+        components:{
+            clubList
+        }
     }
 </script>
 <style>
@@ -44,5 +42,8 @@ import clubs from '../json/club.json'
     }
     .list-block{
         margin:10px 0;
+    }
+    .list-block.media-list .item-title{
+        font-weight: 400!important;
     }
 </style>
