@@ -33,10 +33,8 @@ export default {
     },
     mounted() {
       // console.log('this is current player instance object', this.player)
-
         // console.log('dynamic change options', this.player)
         this.player.muted(false)
-        console.log(this.data)
         // console.log('dynamic change options', this.player)
 
     },

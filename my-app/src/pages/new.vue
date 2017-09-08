@@ -30,7 +30,7 @@
         },
         data(){
             return{
-                cards:'',
+                cards:[],
                 items:[],
             }
         },
@@ -73,6 +73,7 @@
                     for (let i = this.items.length + 1; i <= this.items.length + 20; i++) {
                     temp.push(i);
                     }
+                    this.cards = this.cards.concat(temp);
                     this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded');
                 }, 1000);
             }
