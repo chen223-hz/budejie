@@ -129,4 +129,10 @@ export default {
       line-height: 37px;
       color: #fff;
     }
+    .iconfont{
+      font-size:23px;
+    }
+    a{
+      color:#929292;
+    }
 </style>
