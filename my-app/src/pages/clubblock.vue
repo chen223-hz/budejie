@@ -18,7 +18,7 @@
         </f7-list>
       </div>
       <f7-grid>
-        <club-block v-for="block in blocks" width="100"></club-block>
+        <club-block v-for="block in blocks" width="100" :data="block.text"></club-block>
       </f7-grid>
     </f7-block>
   </f7-page>
@@ -26,7 +26,7 @@
 
 <script>
 import clubBlock from '../component/club_block.vue'
-import blocks from '../json/club_content.json'
+//import blocks from '../json/club_content.json'
 export default {
          components:{
            'club-block': clubBlock
@@ -42,7 +42,11 @@ export default {
             }
         },
         mounted (){
-            this.getData()
+          this.$http.get('http://10.10.11.232:8000/video/').then(response => {
+                this.blocks = response.data.data;
+            }, response => {
+            // error callback
+            })
         }
 }
 </script>
