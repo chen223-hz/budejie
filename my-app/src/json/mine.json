@@ -24,6 +24,31 @@
             "title": "随机穿越",
             "icon" : "baoyou1",
             "href" : "/about/"
+        },
+        {
+            "title": "百思包邮",
+            "icon" : "baoyou1",
+            "href" : "/about/"
+        },
+        {
+            "title": "搜索",
+            "icon" : "123",
+            "href" : "/about/"
+        },
+        {
+            "title": "百思交友",
+            "icon" : "wode1",
+            "href" : "/about/"
+        },
+        {
+            "title": "百思帮派",
+            "icon" : "baisibudejie",
+            "href" : "/about/"
+        },
+        {
+            "title": "更多",
+            "icon" : "1",
+            "href" : "/about/"
         }
         
     ]

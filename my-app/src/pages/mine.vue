@@ -82,11 +82,9 @@ import {setCookie,getCookie,delCookie} from '../js/cookie.js'
                 <div class="content-block-title"><i class="iconfont icon-wode1"></i>登录/注册</div>
             </f7-link>
             <f7-grid > 
-                <mine-iconbtn v-for="mine in mines" :title="mine.title"  :href="mine.href" :icon="mine.icon" width="20" :key="mine.id"></mine-iconbtn>                 
+                <mine-iconbtn v-for="mine in mines" :title="mine.title"  :href="mine.href" :icon="mine.icon" width="20" tablet-width="10" :key="mine.id"></mine-iconbtn>                 
             </f7-grid>
-            <f7-grid > 
-                <mine-iconbtn v-for="mine in mines" :title="mine.title"  :href="mine.href" :icon="mine.icon" width="20"  :key="mine.id"></mine-iconbtn>                 
-            </f7-grid>
+            
         </f7-block>
     </div>
 </template>
@@ -128,5 +126,8 @@ import {setCookie,getCookie,delCookie} from '../js/cookie.js'
     .icon-xiangyou{
         float:right;
     }
-    
+    .row .col-20{
+        width:20%!important;
+        margin-bottom:10px;
+    }
 </style>

@@ -15,7 +15,7 @@
             <f7-card-content v-if="data.type=='mp4'" class="text">
                 <videoVue :data="data.text"></videoVue>
             </f7-card-content>
-            <f7-card-content v-if="data.type=='pic'" class="text">
+            <f7-card-content v-if="data.type=='pic'" class="text pic">
                 <div>{{data.text}}</div>
                 <img :src="data.pic" alt="">
             </f7-card-content>
@@ -106,5 +106,8 @@
         margin-left:44px;
         font-size:13px;
         color:#8e8e93;
+    }
+    .pic img{
+        width:100%;
     }
 </style>
